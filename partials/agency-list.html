@@ -1,0 +1,10 @@
+﻿<h2>Agencies</h2>
+<small>Click one to open.</small>
+<div class="list-group">
+  <a class="list-group-item"
+     data-ng-repeat="agency in ctrl.agencies | orderBy:'agency_name'"
+     ng-href="#/agency/{{agency.feedname}}/{{agency.agency_id || agency.agency_name}}"
+     title="in feed {{agency.feedname}}">
+    {{agency.agency_name}}
+  </a>
+</div>

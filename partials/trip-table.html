@@ -1,0 +1,16 @@
+﻿<table class="table">
+  <tbody>
+    <tr data-ng-repeat="trip in ctrl.trips">
+      <td>
+        <i data-ng-class="['fa', (trip.direction_id == '0'? 'fa-arrow-right' : 'fa-arrow-left')]"></i>
+      </td>
+      <td>{{trip.trip_short_name}}</td>
+      <td>{{trip.trip_headsign}}</td>
+      <td>
+        <i class="fa fa-wheelchair" data-ng-if="trip.wheelchair_accessible == '1'"></i>
+        <i class="fa fa-bicycle" data-ng-if="trip.bikes_allowed == '1'"></i>
+      </td>
+      <td>{{trip.start_time}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,22 @@
+﻿<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><span class="sr-only">Type</span></th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="route in ctrl.routes | orderBy:'route_short_name'" ng-click="ctrl.gotoRoute(route)">
+      <td>
+        <span data-route-label data-route="route" data-feedname="ctrl.feedname"></span>
+      </td>
+      <td>
+        <a data-ng-href="#/route/{{ctrl.feedname}}/{{route.route_id}}">
+          {{route.route_long_name}}
+        </a>
+      </td>
+      <td>{{route.route_desc}}</td>
+    </tr>
+  </tbody>
+</table>

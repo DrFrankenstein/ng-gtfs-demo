@@ -1,0 +1,7 @@
+﻿<span class="label route-label" 
+  data-ng-style="{color:'#'+(ctrl.route.route_text_color||'000000'),backgroundColor:'#'+(ctrl.route.route_color||'FFFFFF')}"
+  data-tooltip="{{ctrl.typeNames[ctrl.route.route_type]}}"
+  data-ng-click="ctrl.gotoRoute(ctrl.route)">
+  <i data-ng-class="['fa', ctrl.typeClasses[ctrl.route.route_type]]"></i>
+  {{ctrl.route.route_short_name}}
+</span>

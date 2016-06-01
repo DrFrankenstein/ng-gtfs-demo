@@ -1,0 +1,34 @@
+﻿<h1>
+  <span data-route-label route="ctrl.route"></span>
+  {{ctrl.route.route_long_name}}
+  <small>on {{ctrl.agency.agency_name}}</small>
+</h1>
+
+<p data-ng-if="ctrl.route.route_desc">{{ctrl.route.route_desc}}</p>
+
+<p>
+  <a class="btn btn-primary" data-ng-href="{{ctrl.route.route_url}}" data-ng-if="ctrl.route.route_url">Web Page</a>
+  <button class="btn btn-warning" data-ng-click="ctrl.loadTimes()">Load times</button>
+</p>
+
+<div class="panel panel-default" data-ng-repeat="service in ctrl.calendar.services">
+  <div class="panel-heading">
+    {{service | calendarService }}
+    <button data-btn-checkbox class="btn btn-xs btn-default"
+      data-ng-model="service.exceptionsVisible"
+      data-ng-if="service.exceptions">
+      Exceptions&hellip;
+    </button>
+    <div data-collapse="!service.exceptionsVisible">
+      except {{service.exceptions | calendarDates }}
+    </div>
+  </div>
+  <div data-trip-table trips="service.trips"></div>
+</div>
+
+<div class="panel panel-default" data-ng-repeat="service in ctrl.calendar.dates">
+  <div class="panel-heading">
+    {{service.dates | calendarDates}}
+  </div>
+  <div data-trip-table trips="service.trips"></div>
+</div>
