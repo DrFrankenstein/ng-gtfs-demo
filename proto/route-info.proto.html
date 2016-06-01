@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html data-ng-app="ng-gtfs">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GTFS Player</title>
+
+  <link href="/vendor/css/bootstrap.css" rel="stylesheet" />
+  <link href="/vendor/css/font-awesome.css" rel="stylesheet" />
+  <link href="/app.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/">GTFS Player</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div data-ng-view>
+      <h1>
+        <span class="label route-label" 
+          style="color:#FFFFFF;background-color:#D31C1B"
+          data-tooltip="{{ctrl.typeNames[ctrl.route.route_type]}}"
+          data-ng-click="ctrl.gotoRoute(ctrl.route)">
+          <i class="fa fa-train"></i>
+          VH
+        </span>
+        Vaudreuil-Hudson
+        <small>on Agence métropolitaine de transport</small>
+      </h1>
+
+      <p>Lorem ipsum dolor sit amet, consectutir elit, cette ligne passe en quelque part.</p>
+
+      <p>
+        <a class="btn btn-primary">Web Page</a>
+        <button class="btn btn-warning">Load times</button>
+      </p>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Mondays, Tuesdays, Wednesdays, Thursdays, Fridays from April 6, 2015 to September 6, 2015
+          <button class="btn btn-xs btn-default">Exceptions&hellip;</button>
+        </div>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><i class="fa fa-arrow-right"></i></td>
+              <td>14</td>
+              <td>Direction Montréal</td>
+              <td>
+                <i class="fa fa-wheelchair"></i>
+                <i class="fa fa-bicycle"></i>
+              </td>
+              <td>7:30&nbsp;AM</td>
+            </tr>
+            <tr>
+              <td><i class="fa fa-arrow-left"></i></td>
+              <td>15</td>
+              <td>Direction Hudson</td>
+              <td>
+                <i class="fa fa-wheelchair"></i>
+                <i class="fa fa-bicycle"></i>
+              </td>
+              <td>18:00&nbsp;PM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
