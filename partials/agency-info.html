@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <h1>{{ctrl.agency.agency_name}}</h1>
+  <p>
+    <a class="btn btn-primary btn-lg" data-ng-href="{{ctrl.agency.agency_url}}">Web Site</a>
+    <a class="btn btn-primary btn-lg" data-ng-if="ctrl.agency.agency_fare_url"
+      data-ng-href="{{ctrl.agency.agency_fare_url}}">Fares</a>
+  </p>
+  <p>
+    Phone: {{ctrl.agency.agency_phone || "none"}}
+  </p>
+</div>
+<h2>Routes</h2>
+<div data-route-table data-feedname="{{ctrl.feedname}}" data-agency="{{ctrl.agencyname}}"></div>
